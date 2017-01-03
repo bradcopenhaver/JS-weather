@@ -11,6 +11,11 @@ $(document).ready(function(){
     $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey).then(function(response) {
       currentCity.setWeatherData(response);
       $('.currentCity').html("<h3>Current City: " + city + "</h3>");
+    }).fail(function(error) {
+      $('.currentCity').html("<h3>" + error.responseJSON.message + "</h3>");
+    });
+    $.get('http://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=' + apiKey).then(function(response) {
+      currentCity.setForecastData(response);
     });
     $('.buttons').show();
 
@@ -24,8 +29,11 @@ $(document).ready(function(){
       currentCity.convert();
       $('.output').html("<h3>Current Temperature: " + currentCity.farenheit + " °F & " + currentCity.celsius + " °C</h3>");
     });
-    // $('#weather').click(function() {
-    //   $('.output').html("<h3>Current 5-Day Forecast: " + currentCity.weatherData.weather[0].main + "</h3>");
-    // });
+    $('#forecast').click(function() {
+      $('.output').html("<h3>Five-Day Forecast:</h3>");
+      for(i=1; i<6; i++){
+        $('.output').append("<h3>Day " + i + ": " + currentCity.forecastData.list[i].weather[0].main + ".</h3>");
+      }
+    });
   });
 });

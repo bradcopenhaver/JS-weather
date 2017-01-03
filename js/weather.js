@@ -1,13 +1,18 @@
 function City(name) {
   this.name = name;
   this.weatherData;
+  this.forecastData;
   this.farenheit;
   this.celsius;
 }
 
 City.prototype.setWeatherData = function(data) {
   this.weatherData = data;
-}
+};
+
+City.prototype.setForecastData = function(data) {
+  this.forecastData = data;
+};
 
 City.prototype.convert = function () {
   var kelvin = this.weatherData.main.temp;

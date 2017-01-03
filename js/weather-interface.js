@@ -21,7 +21,8 @@ $(document).ready(function(){
       $('.output').html("<h3>Current Humidity: " + currentCity.weatherData.main.humidity + "%</h3>");
     });
     $('#temperature').click(function() {
-      $('.output').html("<h3>Current Temperature: " + currentCity.weatherData.main.temp + "</h3>");
+      currentCity.convert();
+      $('.output').html("<h3>Current Temperature: " + currentCity.farenheit + " °F & " + currentCity.celsius + " °C</h3>");
     });
     // $('#weather').click(function() {
     //   $('.output').html("<h3>Current 5-Day Forecast: " + currentCity.weatherData.weather[0].main + "</h3>");

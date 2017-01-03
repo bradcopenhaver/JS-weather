@@ -12,9 +12,15 @@
       <h1>Get Weather Conditions From Anywhere!</h1>
       <label for="location">Enter a location:</label>
       <input id="location" type="text">
-      <button class="btn-success" id="weatherLocation">Get Current Humidity!</button>
-      <div class="showWeather"></div>
-
+      <button id="submit" class="btn">Submit</button>
+      <div class="buttons">
+        <button class="btn btn-success" id="weather">Get Current Weather!</button>
+        <button class="btn btn-primary" id="humidity">Get Current Humidity!</button>
+        <button class="btn btn-warning" id="temperature">Get Current Temperature!</button>
+        <button class="btn btn-danger" id="forecast">Get 5-Day Forecast!</button>
+      </div>
+      <div class="currentCity"></div>
+      <div class="output"></div>
     </div>
   </body>
 </html>

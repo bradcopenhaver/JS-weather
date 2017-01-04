@@ -1,6 +1,14 @@
 $grey: lightgray;
+input {
+  height: 35px;
+  padding-left: 10px;
+  border-radius: 4px;
+  background: white;
+  border: 1px solid white;
+}
 .container {
-  margin-top: 60px;
+  height: 70vh;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -14,7 +22,7 @@ $grey: lightgray;
     margin: 0 auto;
   }
   .output {
-    width: 700px;
+    width: 60%;
     margin: 0 auto;
     text-align: center;
     display: flex;
@@ -33,10 +41,12 @@ $grey: lightgray;
     text-align: center;
   }
   .forecast {
+    border-radius: 10px;
     width: 200px;
     height: 200px;
-    background: $grey;
-    margin: 10px;
+    background: lighten($grey, 5%);
+    border: 1px solid $grey;
+    margin: .5%;
     text-align: center;
     color: #333;
   }

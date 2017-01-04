@@ -3,7 +3,8 @@ var City = require('./../js/weather.js').cityModule;
 
 $(document).ready(function(){
 
-  $('#submit').click(function() {
+  $('form').submit(function(event) {
+    event.preventDefault();
     $('.output').html("");
     var city = $('#location').val();
     var currentCity = new City(city);
@@ -30,7 +31,7 @@ $(document).ready(function(){
       $('.output').html("<h3>Current Temperature: " + currentCity.farenheit + " °F & " + currentCity.celsius + " °C</h3>");
     });
     $('#forecast').click(function() {
-      $('.output').html("<h3>Five-Day Forecast:</h3>");
+      $('.output').html("<h3 class='text'>Five-Day Forecast:</h3>");
       for(i=0; i<5; i++){
         $('.output').append("<div class='forecast'><h3>Day " + (i+1) + ": " + currentCity.forecastData.list[i].weather[0].main + "</h3><img src=http://openweathermap.org/img/w/" + currentCity.forecastData.list[i].weather[0].icon + ".png><h5>High: " + currentCity.forecastData.list[i].temp.max + " °F</h5><h5>Low: " + currentCity.forecastData.list[i].temp.min + " °F</h5></div>");
       }

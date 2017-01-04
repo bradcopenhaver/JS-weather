@@ -2,25 +2,29 @@
 <html>
   <head>
     <link rel="stylesheet" href="build/css/vendor.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="build/css/styles.css">
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
     <title>Weather App</title>
   </head>
   <body>
     <div class="container">
-      <h1>Get Weather Conditions From Anywhere!</h1>
-      <label for="location">Enter a location:</label>
-      <input id="location" type="text">
-      <button id="submit" class="btn">Submit</button>
-      <div class="buttons">
-        <button class="btn btn-success" id="weather">Get Current Weather!</button>
-        <button class="btn btn-primary" id="humidity">Get Current Humidity!</button>
-        <button class="btn btn-warning" id="temperature">Get Current Temperature!</button>
-        <button class="btn btn-danger" id="forecast">Get 5-Day Forecast!</button>
+      <div class="inputContainer">
+        <h1>Get Weather Conditions From Anywhere!</h1>
+        <form>
+          <label for="location">Enter a location:</label>
+          <input id="location" type="text">
+          <button id="submit" type="submit" class="btn">Submit</button>
+        </form>
       </div>
       <div class="currentCity"></div>
+      <div class="buttons">
+        <button class="btn btn-danger" id="weather">Get Current Weather!</button>
+        <button class="btn btn-warning" id="humidity">Get Current Humidity!</button>
+        <button class="btn btn-success" id="temperature">Get Current Temperature!</button>
+        <button class="btn btn-info" id="forecast">Get 5-Day Forecast!</button>
+      </div>
       <div class="output"></div>
-    </div>
+    </div><!--end of container-->
   </body>
 </html>

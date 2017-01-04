@@ -1,0 +1,43 @@
+$grey: lightgray;
+.container {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  .inputContainer {
+    border-radius: 10px;
+    padding: 120px 40px;
+    background: $grey;
+    text-align: center;
+    height: 400px;
+    width: 700px;
+    margin: 0 auto;
+  }
+  .output {
+    width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .text {
+      flex-basis: 100%;
+    }
+  }
+  .currentCity {
+    text-align: center;
+  }
+  .buttons {
+    display: none;
+    padding: 10px;
+    text-align: center;
+  }
+  .forecast {
+    width: 200px;
+    height: 200px;
+    background: $grey;
+    margin: 10px;
+    text-align: center;
+    color: #333;
+  }
+}
